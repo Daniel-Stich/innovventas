@@ -1,4 +1,21 @@
 // =========================
+// SESIÓN DEL CHATBOT
+// =========================
+
+let sessionId = localStorage.getItem("nova_session");
+
+if (!sessionId) {
+
+    sessionId = crypto.randomUUID();
+
+    localStorage.setItem(
+        "nova_session",
+        sessionId
+    );
+}
+
+
+// =========================
 // ABRIR / CERRAR CHAT
 // =========================
 
@@ -58,7 +75,8 @@ async function sendMessage() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    mensaje: mensaje
+                    mensaje,
+                    sessionId
                 })
             }
         );
