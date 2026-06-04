@@ -170,33 +170,37 @@
 
     <div id="chat-window">
 
-        <div class="chat-header">
+    <div class="chat-header">
 
-            <h3>Nova IA</h3>
+        <h3>🤖 Nova IA</h3>
 
-            <button onclick="toggleChat()">✕</button>
+        <button onclick="toggleChat()">✕</button>
 
+    </div>
+
+    <div id="chat-messages">
+
+        <div class="bot-message">
+            👋 Hola, soy Nova IA. ¿En qué puedo ayudarte?
         </div>
 
-        <div id="chat-messages">
-    <div class="bot-message">
-        👋 Hola, soy Nova IA. ¿En qué puedo ayudarte?
     </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="chat-input"
+            placeholder="Escribe tu mensaje..."
+        >
+
+        <button onclick="sendMessage()">
+            ➤
+        </button>
+
+    </div>
+
 </div>
-
-<input
-    type="text"
-    id="chat-input"
-    placeholder="Escribe tu mensaje..."
->
-
-<button onclick="sendMessage()">
-    Enviar
-</button>
-
-        </div>
-
-    </div>
 
     <!-- TOAST -->
 

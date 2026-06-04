@@ -194,17 +194,30 @@
 
 .chat-input button{
 
-    background:var(--primary);
+    width:45px;
 
-    color:white;
+    height:45px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:50%;
 
-    padding:12px 18px;
+    background:#2563eb;
+
+    color:white;
 
     cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.chat-input button:hover{
+
+    transform:scale(1.05);
+
+    background:#3b82f6;
 }
 
 /* =========================
@@ -239,3 +252,4 @@
     opacity:1;
     transform:translateY(0);
 }
+

@@ -1,16 +1,8 @@
 // =========================
-// CONFIGURACIÓN GEMINI
-// =========================
-
-const API_KEY = "PENDIENTE";
-
-
-// =========================
 // ABRIR / CERRAR CHAT
 // =========================
 
 function toggleChat() {
-
     document
         .getElementById("chat-window")
         .classList
@@ -18,7 +10,6 @@ function toggleChat() {
 }
 
 function openChat() {
-
     document
         .getElementById("chat-window")
         .classList
@@ -32,16 +23,12 @@ function openChat() {
 
 async function sendMessage() {
 
-    const input =
-        document.getElementById("chat-input");
-
-    const mensaje =
-        input.value.trim();
+    const input = document.getElementById("chat-input");
+    const mensaje = input.value.trim();
 
     if (!mensaje) return;
 
-    const chat =
-        document.getElementById("chat-messages");
+    const chat = document.getElementById("chat-messages");
 
     // Mensaje usuario
     chat.innerHTML += `
@@ -52,12 +39,10 @@ async function sendMessage() {
 
     input.value = "";
 
-    chat.scrollTop = chat.scrollHeight;
-
     // Indicador escribiendo
     chat.innerHTML += `
         <div class="bot-message" id="typing">
-            Nova IA está escribiendo...
+            🤖 Nova IA está escribiendo...
         </div>
     `;
 
@@ -66,49 +51,29 @@ async function sendMessage() {
     try {
 
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+            "http://localhost:3000/chat",
             {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text:
-`Eres Nova IA, asistente virtual de InnovVentas.
-
-Información de la empresa:
-
-- Tienda tecnológica peruana.
-- Venta de laptops, smartphones, monitores y accesorios.
-- Atención amable y profesional.
-- Responde en español.
-- Mantén respuestas cortas y claras.
-
-Usuario:
-${mensaje}`
-                                }
-                            ]
-                        }
-                    ]
-
+                    mensaje: mensaje
                 })
             }
         );
 
         const data = await response.json();
 
-        document
-            .getElementById("typing")
-            .remove();
+        const typing = document.getElementById("typing");
+
+        if (typing) {
+            typing.remove();
+        }
 
         const respuesta =
-            data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-            "Lo siento, no pude responder en este momento.";
+            data.respuesta ||
+            "Lo siento, no pude generar una respuesta.";
 
         chat.innerHTML += `
             <div class="bot-message">
@@ -123,14 +88,15 @@ ${mensaje}`
 
         console.error(error);
 
-        const typing =
-            document.getElementById("typing");
+        const typing = document.getElementById("typing");
 
-        if (typing) typing.remove();
+        if (typing) {
+            typing.remove();
+        }
 
         chat.innerHTML += `
             <div class="bot-message">
-                ❌ Error al conectar con Gemini.
+                ❌ Error al conectar con Nova IA.
             </div>
         `;
 
@@ -145,12 +111,11 @@ ${mensaje}`
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const input =
-        document.getElementById("chat-input");
+    const input = document.getElementById("chat-input");
 
     input.addEventListener("keypress", function(event) {
 
-        if(event.key === "Enter") {
+        if (event.key === "Enter") {
 
             event.preventDefault();
 
