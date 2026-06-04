@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InnovVentas | Tecnología Inteligente</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                Innov<span>Ventas</span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+
+    <button class="btn-nav" onclick="openChat()">
+        Hablar con IA
+    </button>
+
+    <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </button>
+
+</div>
+
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                Tecnología de Vanguardia en Perú
+            </span>
+
+            <h1>
+                Tecnología inteligente para personas y empresas
+            </h1>
+
+            <p>
+                Encuentra laptops, smartphones, accesorios y soluciones tecnológicas
+                con atención personalizada y asistencia mediante inteligencia artificial.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#productos" class="btn-primary">
+                    Ver Productos
+                </a>
+
+                <button class="btn-secondary" onclick="openChat()">
+                    Hablar con Nova IA
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="productos">
+
+        <div class="section-header">
+            <h2>Productos Destacados</h2>
+            <p>Los equipos tecnológicos más solicitados por nuestros clientes.</p>
+        </div>
+
+        <div id="products-container" class="products-grid"></div>
+
+        </div>
+
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="beneficios">
+
+        <div class="section-header">
+            <h2>¿Por qué elegir InnovVentas?</h2>
+        </div>
+
+        <div class="beneficios-grid">
+
+            <div class="beneficio-card">
+                <div class="icon">🚚</div>
+                <h3>Envío Rápido</h3>
+                <p>Entrega a nivel nacional.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="icon">🔒</div>
+                <h3>Pago Seguro</h3>
+                <p>Múltiples métodos de pago.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="icon">🤖</div>
+                <h3>Asistencia IA</h3>
+                <p>Respuestas instantáneas.</p>
+            </div>
+
+            <div class="beneficio-card">
+                <div class="icon">🛡️</div>
+                <h3>Garantía Oficial</h3>
+                <p>Productos certificados.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+
+        <h2>¿Necesitas ayuda?</h2>
+
+        <p>
+            Nuestro equipo y Nova IA están disponibles para resolver tus consultas.
+        </p>
+
+        <button onclick="openChat()" class="btn-primary">
+            Iniciar conversación
+        </button>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>InnovVentas</h3>
+
+        <p>© 2025 InnovVentas SAC - Lima, Perú</p>
+
+        <p>Proyecto Académico AI-900</p>
+
+    </footer>
+
+    <!-- CHATBOT -->
+
+    <div id="chat-bubble">
+
+        <button id="chat-toggle" onclick="toggleChat()">
+            💬
+        </button>
+
+    </div>
+
+    <div id="chat-window">
+
+        <div class="chat-header">
+
+            <h3>Nova IA</h3>
+
+            <button onclick="toggleChat()">✕</button>
+
+        </div>
+
+        <div id="chat-messages">
+    <div class="bot-message">
+        👋 Hola, soy Nova IA. ¿En qué puedo ayudarte?
+    </div>
+</div>
+
+<input
+    type="text"
+    id="chat-input"
+    placeholder="Escribe tu mensaje..."
+>
+
+<button onclick="sendMessage()">
+    Enviar
+</button>
+
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+
+<div id="toast"></div>
+
+<!-- MODAL DEL CARRITO -->
+
+<div id="cart-modal">
+
+    <div id="cart-sidebar">
+
+    <button class="close-cart"
+            onclick="toggleCart()">
+        ✕
+    </button>
+
+    <h2>🛒 Mi Carrito</h2>
+
+    <div id="cart-items"></div>
+
+    <div id="cart-total">
+        Total: S/ 0
+    </div>
+
+</div>
+
+</div>
+
+    <!-- SCRIPTS -->
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/chatbot.js"></script>
+    
+
+</body>
+
+</html>

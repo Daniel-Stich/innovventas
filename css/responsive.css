@@ -1,0 +1,101 @@
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 992px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero p{
+        font-size:1.1rem;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-menu{
+        gap:20px;
+    }
+}
+
+/* =========================
+   MOVILES
+========================= */
+
+@media (max-width: 768px){
+
+    .hero{
+        padding-top:150px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+        max-width:300px;
+    }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    .section-header h2,
+    .contacto h2{
+        font-size:2rem;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .beneficios-grid{
+        grid-template-columns:1fr;
+    }
+
+    #chat-window{
+        width:95%;
+        right:2.5%;
+        height:75vh;
+    }
+}
+
+/* =========================
+   MOVILES PEQUEÑOS
+========================= */
+
+@media (max-width: 480px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .navbar{
+        padding:15px;
+    }
+
+    .product-card{
+        padding:20px;
+    }
+}

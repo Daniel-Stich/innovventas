@@ -1,0 +1,241 @@
+/* =========================
+   CHAT FLOATING BUTTON
+========================= */
+
+#chat-bubble{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    z-index:9999;
+}
+
+#chat-toggle{
+    width:65px;
+    height:65px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1.7rem;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px rgba(79,124,255,.35);
+
+    transition:.3s;
+}
+
+#chat-toggle:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   CHAT WINDOW
+========================= */
+
+#chat-window{
+
+    position:fixed;
+
+    bottom:100px;
+    right:25px;
+
+    width:340px;      /* antes 380px */
+    height:480px;     /* antes 550px */
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    flex-direction:column;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.4);
+
+    z-index:9999;
+}
+
+#chat-window.active{
+    display:flex;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.chat-header{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f7cff
+    );
+
+    color:white;
+
+    padding:16px 20px;
+}
+
+.chat-header h3{
+    font-size:1rem;
+}
+
+.chat-header button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+#chat-messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.bot-message{
+
+    align-self:flex-start;
+
+    background:#1e293b;
+
+    color:white;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    max-width:85%;
+
+    line-height:1.5;
+}
+
+.user-message{
+
+    align-self:flex-end;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    max-width:85%;
+
+    line-height:1.5;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.chat-input{
+
+    display:flex;
+
+    padding:15px;
+
+    border-top:1px solid var(--border);
+
+    gap:10px;
+}
+
+.chat-input input{
+
+    flex:1;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    background:#1f2937;
+
+    color:white;
+}
+
+.chat-input input:focus{
+    outline:none;
+}
+
+.chat-input button{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+#toast{
+
+    position:fixed;
+
+    top:30px;
+    right:30px;
+
+    background:#10b981;
+
+    color:white;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    opacity:0;
+
+    transform:translateY(-20px);
+
+    transition:.3s;
+
+    z-index:9999;
+}
+
+#toast.show{
+    opacity:1;
+    transform:translateY(0);
+}

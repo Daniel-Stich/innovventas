@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "nombre": "UltraBook Pro X15",
+        "categoria": "Laptop",
+        "precio": 5499,
+        "descripcion": "Intel Core i9, 32GB RAM, SSD 1TB, OLED 4K",
+        "icono": "💻"
+    },
+    {
+        "id": 2,
+        "nombre": "NovaPix 15 Ultra",
+        "categoria": "Smartphone",
+        "precio": 3299,
+        "descripcion": "Cámara 200MP, Snapdragon 8 Gen 3",
+        "icono": "📱"
+    },
+    {
+        "id": 3,
+        "nombre": "SoundSphere ANC 500",
+        "categoria": "Audio",
+        "precio": 899,
+        "descripcion": "Cancelación activa de ruido, 40h batería",
+        "icono": "🎧"
+    },
+    {
+        "id": 4,
+        "nombre": "SmartWatch Series 9",
+        "categoria": "Wearable",
+        "precio": 1199,
+        "descripcion": "GPS, monitor cardíaco, 18 días batería",
+        "icono": "⌚"
+    },
+    {
+        "id": 5,
+        "nombre": "ViewMaster 4K",
+        "categoria": "Monitor",
+        "precio": 2799,
+        "descripcion": "IPS 4K 144Hz HDR600",
+        "icono": "🖥️"
+    },
+    {
+        "id": 6,
+        "nombre": "GamePad Elite Z",
+        "categoria": "Gaming",
+        "precio": 549,
+        "descripcion": "Control inalámbrico con vibración HD",
+        "icono": "🎮"
+    }
+]
